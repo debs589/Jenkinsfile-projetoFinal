@@ -11,27 +11,27 @@ pipeline {
             }
         }
 
-        stage('Build') {
-            when {
-                branch "*/main"
-            } 
-            steps { 
-                script{
-                 image = docker.build("talits/v1:main")
-                }
-            }
-        }
+        
         stage('Build dev'){
             when {
                not {
-                  branch "*/main"
+                  branch "main"
                }
             }
             steps { 
                 script{
-                 echo "${GIT_BRANCH}"
                  image = docker.build("talits/v1:develop")
                  
+                }
+            }
+        }
+        stage('Build') {
+            when {
+                branch "main"
+            } 
+            steps { 
+                script{
+                 image = docker.build("talits/v1:main")
                 }
             }
         }
