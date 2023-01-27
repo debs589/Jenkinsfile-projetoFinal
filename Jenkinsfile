@@ -29,7 +29,9 @@ pipeline {
             }
             steps { 
                 script{
+                 echo "${GIT_BRANCH}"
                  image = docker.build("talits/v1:develop")
+                 
                 }
             }
         }
