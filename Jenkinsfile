@@ -24,7 +24,7 @@ pipeline {
         stage('Build dev'){
             when {
                 not {
-                    branch 'main'
+                    branch "main"
                 }
             }
             steps { 
