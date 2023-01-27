@@ -13,7 +13,7 @@ pipeline {
 
         stage('Build') {
             when {
-                branch 'origin/main'
+                branch '^main'
             } 
             steps { 
                 script{
@@ -24,7 +24,7 @@ pipeline {
         stage('Build dev'){
             when {
                not {
-                  branch 'origin/main'
+                  branch '^main'
                }
             }
             steps { 
