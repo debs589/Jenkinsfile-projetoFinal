@@ -5,8 +5,8 @@ pipeline {
             steps {
               git (
                 branch: 'main',
-                credentialsId: '5b5df9af-8d67-4442-9335-71de7960da54',
-                url: 'git@github.com:Talits/ada-ci.git'
+                credentialsId: 'af164527-d6d2-4e6b-b7ae-47c54f22637b',
+                url: 'git@github.com:debs589/ada-ci.git'
               )
             }
         }
@@ -20,7 +20,7 @@ pipeline {
             }
             steps { 
                 script{
-                 image = docker.build("talits/v1:develop")
+                 image = docker.build("debs589/v1:develop")
                  
                 }
             }
@@ -31,7 +31,7 @@ pipeline {
             } 
             steps { 
                 script{
-                 image = docker.build("talits/v1:main")
+                 image = docker.build("debs589/v1:main")
                 }
             }
         }
