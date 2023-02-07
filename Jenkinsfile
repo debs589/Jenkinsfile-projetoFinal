@@ -5,8 +5,7 @@ pipeline {
             steps {
               git (
                 branch: 'main',
-                credentialsId: 'af164527-d6d2-4e6b-b7ae-47c54f22637b',
-                url: 'git@github.com:debs589/ada-ci.git'
+                url: 'https://github.com/debs589/ada-ci.git'
               )
             }
         }
