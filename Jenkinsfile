@@ -6,6 +6,7 @@ pipeline {
               git (
                 branch: 'main',
                 url: 'https://github.com/debs589/ada-ci.git'
+                 
               )
             }
         }
@@ -37,7 +38,7 @@ pipeline {
         stage('Push') {
             steps {
                 script{
-                       docker.withRegistry('', 'docker') {
+                       docker.withRegistry('', 'docker2') {
                        image.push()
                     }
                 }
